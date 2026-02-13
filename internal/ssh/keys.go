@@ -13,7 +13,6 @@ import (
 
 /**
  * Loads existing Ed25519 host key or generates a new one if not found.
- *
  * @param path - Filesystem path to store/load the key
  * @return SSH signer for the host key
  * @return error if key operations fail

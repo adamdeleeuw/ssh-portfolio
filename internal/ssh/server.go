@@ -12,7 +12,6 @@ import (
 
 /**
  * Starts the SSH server and begins accepting connections.
- *
  * @param cfg - Server configuration (port, password, keys)
  * @return error if server fails to start or crashes
  * @effects Blocks current goroutine until server stops
@@ -64,7 +63,6 @@ func StartServer(cfg *Config) error {
 
 /**
  * Creates password authentication handler.
- *
  * @param expectedPassword - The password to check against
  * @return SSH PasswordHandler function
  */
@@ -81,7 +79,6 @@ func createPasswordHandler(expectedPassword string) ssh.PasswordHandler {
 
 /**
  * Creates the SSH session handler that manages each connection.
- *
  * @param cfg - Server configuration
  * @return SSH Handler function
  */
