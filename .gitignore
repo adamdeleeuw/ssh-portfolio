@@ -1,0 +1,43 @@
+# Binaries
+ssh-portfolio
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+*.out
+/coverage.txt
+
+# Go workspace file
+go.work
+
+# Data directory (SQLite DB, SSH keys)
+/data/
+*.db
+
+# Environment variables
+.env
+.env.local
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React (web-portfolio)
+web-portfolio/node_modules/
+web-portfolio/dist/
+web-portfolio/.env
+web-portfolio/.env.local
+
+# Logs
+*.log
+logs/
