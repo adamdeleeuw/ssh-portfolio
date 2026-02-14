@@ -15,8 +15,8 @@ A unique SSH-based portfolio built ground-up in Go with Bubble Tea. BUT, this wa
 **Tech Stack:**
 - Go 1.26.0
 - Bubble Tea, Lip Gloss, Bubbles (yes, these are real libraries)
+- GitHub Actions CI/CD
 - SQLite for persistence (To-do)
-- GitHub Actions CI/CD (To-do)
 
 [GitHub Repo](https://github.com/adamdeleeuw/ssh-portfolio)
 
