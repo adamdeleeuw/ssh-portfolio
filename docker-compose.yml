@@ -1,0 +1,40 @@
+services:
+  ssh-portfolio:
+    build: .
+    container_name: ssh-portfolio
+    restart: unless-stopped
+
+    ports:
+      - "22:22"
+
+    volumes:
+      # Persist host keys and database
+      - ./data:/data
+      # Content files (read-only)
+      - ./content:/app/content:ro
+
+    environment:
+      - PORT=22
+      - SSH_PASSWORD=${SSH_PASSWORD}
+      - SSH_USERNAME=portfolio
+      - HOST_KEY_PATH=/data/ssh_host_ed25519_key
+      - CONTENT_DIR=/app/content
+
+    # Resource limits (prevent abuse)
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+    # Security options
+    security_opt:
+      - no-new-privileges:true
+
+    # Read-only root filesystem (except /data volume)
+    read_only: true
+    tmpfs:
+      - /tmp

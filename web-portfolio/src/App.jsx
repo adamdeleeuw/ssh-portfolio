@@ -14,7 +14,7 @@ function App() {
     const el = useRef(null)
 
     // SSH connection command
-    const sshCommand = 'ssh -p 2222 adam@yourserver.com'
+    const sshCommand = 'ssh portfolio@adamdeleeuw.ca'
 
     useEffect(() => {
         // Typing animation configuration
