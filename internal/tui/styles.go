@@ -1,6 +1,18 @@
 package tui
 
-import "github.com/charmbracelet/lipgloss"
+import (
+	"os"
+
+	"github.com/charmbracelet/lipgloss"
+	"github.com/muesli/termenv"
+)
+
+// Force TrueColor support for consistent colors in Docker/SSH
+func init() {
+	lipgloss.SetColorProfile(termenv.TrueColor)
+	// Also set COLORTERM env var to signal TrueColor support
+	os.Setenv("COLORTERM", "truecolor")
+}
 
 // Tokyo Night color palette
 const (

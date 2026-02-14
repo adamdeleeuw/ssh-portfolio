@@ -90,7 +90,7 @@ func (m Model) renderStatsBar() string {
 	hours := int(uptime.Hours())
 	minutes := int(uptime.Minutes()) % 60
 
-	stats := fmt.Sprintf("⏱  Uptime: %dh %dm  •  Session: %s", hours, minutes, m.sessionID[:8])
+	stats := fmt.Sprintf("⏱ %dh %dm • Session: %s", hours, minutes, m.sessionID)
 	return statsBarStyle.Width(m.width).Render(stats)
 }
 
