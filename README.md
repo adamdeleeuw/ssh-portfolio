@@ -2,6 +2,8 @@
 
 > A unique SSH-based portfolio with a beautiful TUI interface built with Go, Bubble Tea, and Lip Gloss.
 
+NOTE: If your terminal is light themed, the dark TUI I made will be forced to a light theme that is very unpleasant. I will fix this in the future.
+
 ## Project Overview
 
 Instead of a traditional website, this portfolio is accessed via SSH. Visitors connect to an interactive terminal interface with vim-inspired navigation, featuring:
