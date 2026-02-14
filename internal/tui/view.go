@@ -45,19 +45,7 @@ func (m Model) View() string {
 		b.WriteString(m.renderHelpBar())
 	}
 
-	// Use lipgloss.Place to ensure the background color covers the ENTIRE terminal,
-	// filling any empty space with the background color #1a1b26.
-	// This is critical for light-themed terminals!!!!!
-	s := b.String()
-	return lipgloss.Place(
-		m.width,
-		m.height,
-		lipgloss.Left,
-		lipgloss.Top,
-		s,
-		lipgloss.WithWhitespaceBackground(lipgloss.Color(colorBackground)),
-		lipgloss.WithWhitespaceForeground(lipgloss.Color(colorForeground)),
-	)
+	return b.String()
 }
 
 /**
