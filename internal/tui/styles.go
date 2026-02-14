@@ -12,6 +12,8 @@ func init() {
 	lipgloss.SetColorProfile(termenv.TrueColor)
 	// Also set COLORTERM env var to signal TrueColor support
 	os.Setenv("COLORTERM", "truecolor")
+	// Disable background color detection to prevent lipgloss from adapting colors
+	os.Setenv("LIPGLOSS_DISABLE_BACKGROUND_POLLING", "true")
 }
 
 // Tokyo Night color palette
