@@ -17,5 +17,6 @@ Explore the tabs above to learn about me, my projects, and future plans.
 ---
 
 **Why SSH?**
-
 Because traditional portfolios are boring. Enjoy exploring!
+
+**NOTE:** Links on other pages are clickable with ctrl + click
