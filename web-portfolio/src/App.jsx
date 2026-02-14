@@ -10,6 +10,7 @@ import CopyButton from './components/CopyButton'
  */
 function App() {
     const [typingComplete, setTypingComplete] = useState(false)
+    const [terminalClosed, setTerminalClosed] = useState(false)
     const typedRef = useRef(null)
     const el = useRef(null)
 
@@ -20,8 +21,6 @@ function App() {
         // Typing animation configuration
         const options = {
             strings: [
-                'Connecting to portfolio...^500',
-                'Connecting to portfolio...^500\nTraditional websites are so 2020.^800',
                 'Connecting to portfolio...^500\nTraditional websites are so 2020.^800\n \nTo explore my portfolio, SSH instead:^500',
             ],
             typeSpeed: 40,
@@ -42,6 +41,39 @@ function App() {
             typedRef.current.destroy()
         }
     }, [])
+
+    // Handle Ctrl+C keypress
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac) when terminal is open
+            if ((e.ctrlKey || e.metaKey) && e.key === 'c' && !terminalClosed) {
+                e.preventDefault()
+                setTerminalClosed(true)
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [terminalClosed])
+
+    // Reopen terminal
+    const reopenTerminal = () => {
+        setTerminalClosed(false)
+    }
+
+    // If terminal is closed, show reopen button
+    if (terminalClosed) {
+        return (
+            <div className="app">
+                <div className="terminal-closed">
+                    <p className="closed-message">Terminal closed</p>
+                    <button className="reopen-button" onClick={reopenTerminal}>
+                        Reopen Terminal
+                    </button>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="app">
