@@ -27,10 +27,12 @@ func LoadTabs(contentDir string) ([]tui.Tab, error) {
 		{"Future", "future.md"},
 	}
 
-	// Create glamour renderer with Tokyo Night theme
+	// Create glamour renderer with dark theme for terminal
+	// Enable hyperlinks for clickable links in compatible terminals (OSC 8)
 	renderer, err := glamour.NewTermRenderer(
-		glamour.WithAutoStyle(),
+		glamour.WithStandardStyle("dark"),
 		glamour.WithWordWrap(100),
+		glamour.WithPreservedNewLines(),
 	)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create markdown renderer: %w", err)
