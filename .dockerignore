@@ -1,0 +1,17 @@
+# Exclude data directory (host keys, db) from build context
+data/
+.env
+
+# Exclude git
+.git/
+.github/
+
+# Exclude other build artifacts
+ssh-portfolio
+*.exe
+deploy.sh
+DEPLOYMENT.md
+
+# Exclude web project (if present)
+web-portfolio/node_modules/
+web-portfolio/dist/
