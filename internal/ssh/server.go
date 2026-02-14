@@ -50,9 +50,15 @@ func StartServer(cfg *Config) error {
 
 	// Connection callback for rate limiting
 	server.ConnCallback = func(ctx ssh.Context, conn net.Conn) net.Conn {
+		// key is just the IP, no DNS lookup
 		ip := getIP(conn.RemoteAddr())
+
 		if !rateLimiter.Allow(ip) {
-			log.Warn("Rate limit exceeded", "ip", ip)
+			// Don't log "Rate limit exceeded" for every attempt to avoid log spam,
+			// but do return nil to drop the connection.
+
+			// Small delay to slow down brute force/spam
+			time.Sleep(500 * time.Millisecond)
 			conn.Close()
 			return nil
 		}
