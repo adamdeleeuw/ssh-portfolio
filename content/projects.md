@@ -124,4 +124,23 @@ No public repo.
 
 ---
 
+## Learning & Exploration Projects
+
+Projects I built following tutorials or for learning purposes - because learning in public is important.
+
+### Flappy Bird AI with NEAT (Tutorial Project)
+
+**Description:** An intelligent Flappy Bird implementation using neuroevolution through the NEAT (NeuroEvolution of Augmenting Topologies) algorithm. Followed [this tutorial](https://www.youtube.com/watch?v=MMxFDaIOHsE) to learn about evolutionary algorithms and game AI.
+
+**Tech:** Python, Pygame, NEAT-Python, Matplotlib, Poetry.
+
+**What I Learned:**
+- Evolutionary algorithms and neuroevolution
+- How fitness functions drive emergent behaviors
+- Python's Pygame library for game development
+
+[GitHub Repo](https://github.com/adamdeleeuw/flappy-bird-ai)
+
+---
+
 *More projects coming soon...*

@@ -14,6 +14,7 @@ I'm also a bit of a tinkerer, and I'm always looking for new projects to work on
 - **C** - Built things like a heap memory allocator and interrupt-driven Tron game that runs on an FPGA
 - **C++** - Currently this is what I use in my DSA course and I am building a multi-threaded HTTP server with it.
 - **Java** - Took a software construction course in Java and built a few projects with it.
+- **Python** - Only used for a tutorial project (Flappy Bird AI with NEAT)
 
 ### Interests
 - Systems and Network programming
