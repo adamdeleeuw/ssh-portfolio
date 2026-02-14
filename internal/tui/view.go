@@ -45,7 +45,9 @@ func (m Model) View() string {
 		b.WriteString(m.renderHelpBar())
 	}
 
-	return b.String()
+	// Wrap the entire view in baseStyle to ensure background color is applied everywhere
+	// and to force the specific dimensions.
+	return baseStyle.Width(m.width).Height(m.height).Render(b.String())
 }
 
 /**
