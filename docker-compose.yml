@@ -2,7 +2,8 @@ version: "3.3"
 
 services:
   ssh-portfolio:
-    build: .
+    image: ghcr.io/adamdeleeuw/ssh-portfolio:latest
+    # build: .
     container_name: ssh-portfolio
     restart: unless-stopped
 
