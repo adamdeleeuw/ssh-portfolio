@@ -6,6 +6,9 @@ import (
 	"net"
 	"time"
 
+	"github.com/adamdeleeuw/ssh-portfolio/internal/content"
+	"github.com/adamdeleeuw/ssh-portfolio/internal/tui"
+	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/log"
 	"github.com/gliderlabs/ssh"
 )
@@ -99,29 +102,44 @@ func createSessionHandler(cfg *Config) ssh.Handler {
 			"height", ptyReq.Window.Height,
 		)
 
+		// Load content tabs
+		tabs, err := content.LoadTabs("./content")
+		if err != nil {
+			io.WriteString(sess, fmt.Sprintf("Error loading content: %v\n", err))
+			sess.Exit(1)
+			return
+		}
+
+		// Create TUI model
+		sessionID := fmt.Sprintf("%s-%d", sess.User(), time.Now().Unix())
+		model := tui.NewModel(tabs, sessionID)
+
+		// Set initial window dimensions before starting program
+		model.SetSize(ptyReq.Window.Width, ptyReq.Window.Height)
+
+		// Create Bubble Tea program with custom input/output
+		p := tea.NewProgram(
+			model,
+			tea.WithInput(sess),
+			tea.WithOutput(sess),
+			tea.WithAltScreen(),
+		)
+
 		// Handle window size changes
 		go func() {
 			for win := range winCh {
-				log.Debug("Window resized", "width", win.Width, "height", win.Height)
-				// TODO: Send resize event to TUI (Phase 3)
+				p.Send(tea.WindowSizeMsg{
+					Width:  win.Width,
+					Height: win.Height,
+				})
 			}
 		}()
 
-		// Placeholder: In Phase 3, we'll launch Bubble Tea here
-		// For now, just show a welcome message
-		io.WriteString(sess, "\r\n")
-		io.WriteString(sess, "╔═══════════════════════════════════════╗\r\n")
-		io.WriteString(sess, "║   Welcome to Adam's SSH Portfolio!    ║\r\n")
-		io.WriteString(sess, "╚═══════════════════════════════════════╝\r\n")
-		io.WriteString(sess, "\r\n")
-		io.WriteString(sess, "SSH server is working! \r\n")
-		io.WriteString(sess, "Phase 3 will add the TUI interface.\r\n")
-		io.WriteString(sess, "\r\n")
-		io.WriteString(sess, "Press '~' then '.' to disconnect.\r\n")
-		io.WriteString(sess, "\r\n")
+		// Run the program (blocks until quit)
+		if _, err := p.Run(); err != nil {
+			log.Error("TUI error", "error", err)
+		}
 
-		// Keep session alive until user disconnects
-		<-sess.Context().Done()
 		log.Info("Session ended", "user", sess.User())
 	}
 }
