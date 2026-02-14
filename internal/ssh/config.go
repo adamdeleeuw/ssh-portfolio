@@ -37,7 +37,7 @@ func LoadConfig() *Config {
 		hostKeyPath = "./data/ssh_host_ed25519_key"
 	}
 
-	maxPerMinute := 5
+	maxPerMinute := 60
 	if m := os.Getenv("RATE_LIMIT"); m != "" {
 		if parsed, err := strconv.Atoi(m); err == nil {
 			maxPerMinute = parsed
