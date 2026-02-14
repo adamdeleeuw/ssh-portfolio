@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
 
     ports:
-      - "22:22"
+      - "2222:22"
 
     volumes:
       # Persist host keys and database
