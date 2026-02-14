@@ -1,0 +1,152 @@
+/* Terminal Content */
+.terminal-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    min-height: 350px;
+}
+
+/* Typed Lines */
+.typed-lines {
+    white-space: pre-wrap;
+    color: var(--fg-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* SSH Command Section */
+.ssh-command-section {
+    margin-top: 1.5rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.command-line {
+    background-color: var(--bg-primary);
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+}
+
+.prompt {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.command {
+    color: var(--accent);
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.password-hint {
+    color: var(--fg-dim);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.password-hint .highlight {
+    color: var(--highlight);
+    font-weight: 600;
+}
+
+.button-container {
+    margin-bottom: 1.5rem;
+}
+
+.help-text {
+    color: var(--fg-dim);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.help-text a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.help-text a:hover {
+    border-bottom-color: var(--accent);
+}
+
+/* Cursor */
+.cursor {
+    color: var(--fg-primary);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.cursor.blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* Terminal Footer */
+.terminal-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.footer-hint {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terminal-content {
+        font-size: 0.9rem;
+    }
+
+    .command-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.95rem;
+    }
+
+    .typed-lines {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-content {
+        font-size: 0.85rem;
+    }
+
+    .command-line {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+}

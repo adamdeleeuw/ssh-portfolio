@@ -1,0 +1,63 @@
+/* Tokyo Night Color Palette */
+:root {
+    --bg-primary: #1a1b26;
+    --bg-secondary: #24283b;
+    --fg-primary: #c0caf5;
+    --fg-dim: #565f89;
+    --accent: #7aa2f7;
+    --highlight: #bb9af7;
+    --success: #9ece6a;
+    --border: #414868;
+    --danger: #f7768e;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* App Container - ensure centering */
+.app {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fg-dim);
+}
