@@ -41,7 +41,7 @@ func StartServer(cfg *Config) error {
 	// Configure SSH server
 	server := &ssh.Server{
 		Addr:             fmt.Sprintf(":%d", cfg.Port),
-		Handler:          createSessionHandler(cfg),
+		Handler:          createSessionHandler(),
 		PasswordHandler:  createPasswordHandler(cfg.Password),
 		PublicKeyHandler: nil, // No public key auth for now
 	}
@@ -49,7 +49,7 @@ func StartServer(cfg *Config) error {
 	server.AddHostKey(signer)
 
 	// Connection callback for rate limiting
-	server.ConnCallback = func(ctx ssh.Context, conn net.Conn) net.Conn {
+	server.ConnCallback = func(_ ssh.Context, conn net.Conn) net.Conn {
 		// key is just the IP, no DNS lookup
 		ip := getIP(conn.RemoteAddr())
 
@@ -88,10 +88,9 @@ func createPasswordHandler(expectedPassword string) ssh.PasswordHandler {
 
 /**
  * Creates the SSH session handler that manages each connection.
- * @param cfg - Server configuration
  * @return SSH Handler function
  */
-func createSessionHandler(cfg *Config) ssh.Handler {
+func createSessionHandler() ssh.Handler {
 	return func(sess ssh.Session) {
 		// Handle PTY requests
 		ptyReq, winCh, isPty := sess.Pty()
