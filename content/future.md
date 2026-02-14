@@ -30,7 +30,7 @@ Looking for opportunities in:
 - **X**: [@adamjdeleeuw](https://x.com/adamjdeleeuw)
 - **Email:** [adamjdl@student.ubc.ca]
 
-Feel free to reach out about collaborations, opportunities, or just to chat about tech!
+Feel free to reach out about collaborations, opportunities, or just to chat about tech (please I'm lonely)!
 
 ---
 
