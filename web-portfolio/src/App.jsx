@@ -15,7 +15,7 @@ function App() {
     const el = useRef(null)
 
     // SSH connection command
-    const sshCommand = 'ssh portfolio@adamdeleeuw.ca'
+    const sshCommand = 'ssh -p 2222 portfolio@adamdeleeuw.ca'
 
     useEffect(() => {
         // Typing animation configuration
@@ -96,7 +96,7 @@ function App() {
                             </div>
 
                             <div className="password-hint">
-                                Password: <span className="highlight">[displayed on connection]</span>
+                                Password: <span className="highlight">portfolio</span>
                             </div>
 
                             <div className="button-container">
