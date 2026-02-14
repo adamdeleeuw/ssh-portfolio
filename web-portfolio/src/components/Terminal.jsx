@@ -18,7 +18,7 @@ function Terminal({ children }) {
                     <span className="control minimize"></span>
                     <span className="control maximize"></span>
                 </div>
-                <div className="terminal-title">adam@portfolio</div>
+                <div className="terminal-title">portfolio@adamdeleeuw.ca</div>
             </div>
 
             {/* Terminal body */}

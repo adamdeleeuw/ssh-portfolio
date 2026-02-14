@@ -47,8 +47,11 @@ function App() {
         const handleKeyDown = (e) => {
             // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac) when terminal is open
             if ((e.ctrlKey || e.metaKey) && e.key === 'c' && !terminalClosed) {
-                e.preventDefault()
-                setTerminalClosed(true)
+                // Only close if nothing is selected (allow copy)
+                if (window.getSelection().toString() === '') {
+                    e.preventDefault()
+                    setTerminalClosed(true)
+                }
             }
         }
 
@@ -105,9 +108,6 @@ function App() {
                             </div>
                         </div>
                     )}
-
-                    {/* Cursor */}
-                    <span className={`cursor ${typingComplete ? 'blink' : ''}`}>_</span>
                 </div>
 
                 {/* Terminal footer hint */}
