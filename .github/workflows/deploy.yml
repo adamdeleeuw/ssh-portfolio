@@ -40,6 +40,7 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_SSH_KEY }}
+          port: 2022
           script: |
             cd ssh-portfolio
             git pull origin main
