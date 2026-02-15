@@ -49,7 +49,7 @@ func TestLoadConfig_Defaults(t *testing.T) {
 	if cfg.Password != "portfolio" {
 		t.Errorf("Expected default password 'portfolio', got '%s'", cfg.Password)
 	}
-	if cfg.MaxPerMinute != 5 {
-		t.Errorf("Expected default rate limit 5, got %d", cfg.MaxPerMinute)
+	if cfg.MaxPerMinute != 60 {
+		t.Errorf("Expected default rate limit 60, got %d", cfg.MaxPerMinute)
 	}
 }
