@@ -45,7 +45,6 @@ func StartServer(cfg *Config) error {
 		PasswordHandler:  createPasswordHandler(cfg.Password),
 		PublicKeyHandler: nil, // No public key auth for now
 		IdleTimeout:      5 * time.Minute,
-		MaxTimeout:       30 * time.Second,
 	}
 
 	server.AddHostKey(signer)
