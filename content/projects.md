@@ -6,10 +6,12 @@
 A unique SSH-based portfolio built ground-up in Go with Bubble Tea. BUT, this was [AI assisted](https://antigravity.google/) (I PROMISE I'll do better next time). I just wanted to bring my vision of my portfolio to life so I can showcase the things I did actually build myself (see below). However, I have spent DAYS on this project (mostly debugging deployment) and I'm proud of it.
 
 **Features:**
-- Rate limiting
 - Beautiful TUI with vim keybindings
 - Markdown-themed content rendering
 - Docker + Oracle Cloud deployment
+- Rate limiting
+- Passwordless SSH login
+- Inactive sessions are automatically terminated after 5 minutes of inactivity
 - Read-only environment
 
 **Tech Stack:**
