@@ -3,28 +3,30 @@
 ## SSH Portfolio
 *This very application you're using!*
 
-A unique SSH-based portfolio built ground-up in Go with Bubble Tea. BUT, this was [AI assisted](https://antigravity.google/) (I PROMISE I'll do better next time). I just wanted to bring my vision of my portfolio to life so I can showcase the things I did actually build myself (see below).
+A unique SSH-based portfolio built ground-up in Go with Bubble Tea. BUT, this was [AI assisted](https://antigravity.google/) (I PROMISE I'll do better next time). I just wanted to bring my vision of my portfolio to life so I can showcase the things I did actually build myself (see below). However, I have spent DAYS on this project (mostly debugging deployment) and I'm proud of it.
 
 **Features:**
-- Password authentication
 - Rate limiting
 - Beautiful TUI with vim keybindings
-- Markdown content rendering
-- Docker deployment
+- Markdown-themed content rendering
+- Docker + Oracle Cloud deployment
+- Read-only environment
 
 **Tech Stack:**
 - Go 1.26.0
 - Bubble Tea, Lip Gloss, Bubbles (yes, these are real libraries)
+- React (19.2.0) + Vite (7.3.1) for frontend
 - GitHub Actions CI/CD
-- SQLite for persistence (To-do)
 
 [GitHub Repo](https://github.com/adamdeleeuw/ssh-portfolio)
 
 ---
 
-## Multi-threaded HTTP Server
+## Multi-threaded HTTP Server (Hypocritical I know)
 
 **Description**: Currently building this. Will hopefully be done soon (maybe? Haven't made much progress).
+
+**Tech:** C++17, CMake, more to come...
 
 [GitHub Repo](https://github.com/adamdeleeuw/cpp-multithreaded-server)
 
