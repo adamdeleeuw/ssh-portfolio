@@ -42,8 +42,7 @@ func StartServer(cfg *Config) error {
 	server := &ssh.Server{
 		Addr:             fmt.Sprintf(":%d", cfg.Port),
 		Handler:          createSessionHandler(),
-		PasswordHandler:  createPasswordHandler(cfg.Password),
-		PublicKeyHandler: nil, // No public key auth for now
+		PublicKeyHandler: nil,
 		IdleTimeout:      5 * time.Minute,
 	}
 
@@ -69,22 +68,6 @@ func StartServer(cfg *Config) error {
 
 	log.Info("Starting SSH server", "port", cfg.Port)
 	return server.ListenAndServe()
-}
-
-/**
- * Creates password authentication handler.
- * @param expectedPassword - The password to check against
- * @return SSH PasswordHandler function
- */
-func createPasswordHandler(expectedPassword string) ssh.PasswordHandler {
-	return func(ctx ssh.Context, password string) bool {
-		if password == expectedPassword {
-			log.Info("Successful authentication", "user", ctx.User())
-			return true
-		}
-		log.Warn("Failed authentication attempt", "user", ctx.User())
-		return false
-	}
 }
 
 /**

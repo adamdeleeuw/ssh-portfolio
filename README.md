@@ -23,6 +23,4 @@ To access the portfolio, use the following SSH command:
 ssh portfolio.adamdeleeuw.ca
 ```
 
-**Password:** `portfolio`
-
 If there are any issues connecting (handshake failed or any timeout behaviour) please create an issue on the [GitHub repository](https://github.com/adamdeleeuw/ssh-portfolio).

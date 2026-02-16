@@ -18,8 +18,6 @@ services:
 
     environment:
       - PORT=22
-      - SSH_PASSWORD=${SSH_PASSWORD}
-      - SSH_USERNAME=portfolio
       - HOST_KEY_PATH=/data/ssh_host_ed25519_key
       - CONTENT_DIR=/app/content
 

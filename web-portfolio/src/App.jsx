@@ -95,10 +95,6 @@ function App() {
                                 <span className="command">{sshCommand}</span>
                             </div>
 
-                            <div className="password-hint">
-                                Password: <span className="highlight">portfolio</span>
-                            </div>
-
                             <div className="button-container">
                                 <CopyButton text={sshCommand} />
                             </div>
