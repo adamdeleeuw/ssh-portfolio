@@ -43,7 +43,9 @@ jobs:
           port: 2022
           script: |
             cd ssh-portfolio
-            git pull origin main
+            
+            git fetch --all
+            git reset --hard origin/main
             
             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             
