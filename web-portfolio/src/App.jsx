@@ -15,13 +15,13 @@ function App() {
     const el = useRef(null)
 
     // SSH connection command
-    const sshCommand = 'ssh -p 2222 portfolio@adamdeleeuw.ca'
+    const sshCommand = 'ssh portfolio.adamdeleeuw.ca'
 
     useEffect(() => {
         // Typing animation configuration
         const options = {
             strings: [
-                'Connecting to portfolio...^500\nTraditional websites are so 2020.^800\n \nTo explore my portfolio, SSH instead:^500',
+                'Connecting to portfolio...^500\nHTTP is for losers.^800\n \nTo explore my portfolio, SSH instead:^500',
             ],
             typeSpeed: 40,
             backSpeed: 0,

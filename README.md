@@ -20,7 +20,7 @@ Instead of a traditional website, this portfolio is accessed via SSH. Visitors c
 To access the portfolio, use the following SSH command:
 
 ```bash
-ssh -p 2222 portfolio@adamdeleeuw.ca
+ssh portfolio.adamdeleeuw.ca
 ```
 
 **Password:** `portfolio`
