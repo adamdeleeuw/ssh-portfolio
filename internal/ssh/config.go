@@ -10,7 +10,6 @@ import (
  */
 type Config struct {
 	Port         int
-	Password     string
 	HostKeyPath  string
 	MaxPerMinute int // Rate limit: connections per minute per IP
 }
@@ -27,11 +26,6 @@ func LoadConfig() *Config {
 		}
 	}
 
-	password := os.Getenv("SSH_PASSWORD")
-	if password == "" {
-		password = "portfolio" // Default password
-	}
-
 	hostKeyPath := os.Getenv("HOST_KEY_PATH")
 	if hostKeyPath == "" {
 		hostKeyPath = "./data/ssh_host_ed25519_key"
@@ -46,7 +40,6 @@ func LoadConfig() *Config {
 
 	return &Config{
 		Port:         port,
-		Password:     password,
 		HostKeyPath:  hostKeyPath,
 		MaxPerMinute: maxPerMinute,
 	}
