@@ -3,8 +3,8 @@
 ## What's Next
 
 ### Learning Goals
-- Learn Go in greater depth
 - Continue my C, C++, and Java journey
+- Learn Go in greater depth
 - Learn Kubernetes and cloud-native architectures
 - Continue diving deeper into network programming
 - Contribute to major open-source projects
@@ -16,10 +16,9 @@
 
 ### Career
 Looking for opportunities in:
+- Software Engineering
+- Embedded Programming
 - Systems and network programming
-- Developer tools
-- Infrastructure and platform engineering
-- Open-source-focused companies
 
 ---
 

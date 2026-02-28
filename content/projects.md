@@ -6,7 +6,7 @@
 A unique SSH-based portfolio built from the ground up in Go with Bubble Tea.
 
 **Features:**
-- TUI with vim keybindings
+- TUI with vim-inspired keybindings
 - Markdown-themed content rendering
 - Docker + Oracle Cloud deployment
 - Rate limiting
@@ -24,7 +24,7 @@ A unique SSH-based portfolio built from the ground up in Go with Bubble Tea.
 
 ---
 
-## High-Performance Multithreaded TCP Server
+## Multithreaded TCP Server
 
 A production-oriented TCP/IP server in C++ focused on concurrency, resource management, and scalable architecture.
 
@@ -79,19 +79,6 @@ A production-oriented TCP/IP server in C++ focused on concurrency, resource mana
 
 ---
 
-## Buffers, Concurrency, and Wikipedia Tool
-
-**Description:** A Java project combining a thread-safe, expiring cache with a Wikipedia mediator service.
-
-**Tech:** Java, JUnit 5, ANTLR, Gson
-
-**Highlights:**
-- Fixed-size, time-expiring concurrent cache
-- Request analytics for zeitgeist and peak load metrics
-- JSON-based command protocol with robust parsing and error handling
-
----
-
 ## Flappy Bird with NEAT
 
 **Description:** A Flappy Bird implementation using NEAT (NeuroEvolution of Augmenting Topologies).
@@ -104,6 +91,19 @@ A production-oriented TCP/IP server in C++ focused on concurrency, resource mana
 - Pygame fundamentals
 
 [GitHub Repo](https://github.com/adamdeleeuw/flappy-bird-ai)
+
+---
+
+## Buffers, Concurrency, and Wikipedia Tool
+
+**Description:** A Java project combining a thread-safe, expiring cache with a Wikipedia mediator service.
+
+**Tech:** Java, JUnit 5, ANTLR, Gson
+
+**Highlights:**
+- Fixed-size, time-expiring concurrent cache
+- Request analytics for zeitgeist and peak load metrics
+- JSON-based command protocol with robust parsing and error handling
 
 ---
 

@@ -33,4 +33,4 @@ Despite school still being demanding, I am excited to keep growing as a computer
 
 ---
 
-**Currently**: Building a multi-threaded HTTP server in C++. The project is a work in progress, and I am learning a lot about systems and network programming.
+**Currently**: Building a multi-threaded HTTP server in C++.
